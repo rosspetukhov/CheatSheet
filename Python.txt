@@ -14,6 +14,9 @@ some_matrix.sum(axis=0) #sum all values of all rows
 some_matrix.sum(axis=1) #sum all values of all columns
 some_matrix.std() #find std of all values
 
+
+
+
 # Pandas
 import pandas as pd
 df=pd.read_csv("some_file.txt)
@@ -29,3 +32,28 @@ df.loc[df['Column1']=='abc'].count()
 df.loc[df['Column1']=='abc'].value_counts()
 df.loc[(df['Column1']=='abc)&(df['Column2']==123)]
 sum(df['Email'].apply(lambda x: x.split('@')[1]).value_counts() #example to find popular email providers in Email column
+
+
+
+# Matplotlib
+#Example 1 - chart within a chart
+fig=plt.figure()
+
+ax1=fig.add_axes([0,0,1,1])
+ax1.set_xlabel('X')
+ax1.set_ylabel('Z')
+ax1.set_title('Title')
+ax1.plot(x,z)
+
+ax2=fig.add_axes([0.2,0.5,0.4,0.4])
+ax2.set_xlabel('X')
+ax2.set_ylabel('Z')
+ax2.set_title('Title')
+ax2.set_xlim(20,22)
+ax2.set_ylim(30,50)
+ax2.plot(x,y);
+
+# Example 2 - chart next to a chart
+fig, axes=plt.subplots(nrows=1, ncols=2, figsize=(12,2))
+axes[0].plot(x,y,color="blue", lw=1, ls='--')
+axes[1].plot(x,z,color="red", lw=10, ls='-');

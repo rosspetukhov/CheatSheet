@@ -1,1 +1,31 @@
+# Numpy
+import numpy as np
+np.zeros(10) #array of 10 zeros
+np.ones(10)*5 #array of 10 fives
+np.arange(10,51,2) #array of all the even integers from 10 to 50
+np.arange(0,9).reshape(3,3) #3x3 matrix with values ranging from 0 to 8
+np.eye(3) #3x3 identity matrix
+np.random.rand() #random number
+np.random.rand(10) #array of 10 random numbers
+np.linspace(0,1,10) #10 linearly spaced points between 0 and 1
+some_matrix[0:3,1:2] #select first 3 rows, 2nd column of the some_matrix 
+some_matrix.sum() #sum all values
+some_matrix.sum(axis=0) #sum all values of all rows
+some_matrix.sum(axis=1) #sum all values of all columns
+some_matrix.std() #find std of all values
 
+# Pandas
+import pandas as pd
+df=pd.read_csv("some_file.txt)
+df.head()
+df.info()
+df.describe()
+df['Column1'].mean() 
+df['Column1'].min() 
+df['Column1'].max()
+df['Column1'].nunique()
+df['Column1'].value_counts()
+df.loc[df['Column1']=='abc'].count()
+df.loc[df['Column1']=='abc'].value_counts()
+df.loc[(df['Column1']=='abc)&(df['Column2']==123)]
+sum(df['Email'].apply(lambda x: x.split('@')[1]).value_counts() #example to find popular email providers in Email column

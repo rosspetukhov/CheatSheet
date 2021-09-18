@@ -1,0 +1,35 @@
+-- Explore new table
+SELECT * FROM table1
+LIMIT(10)
+
+-- Change units
+SELECT column1, 
+CAST(date_column AS date),
+FROM table1;
+
+-- Example to find max, average
+SELECT MAX(Column1) AS max_value, AVG(Column1) AS avr_value
+FROM table1
+
+-- Group columns value by type of values
+SELECT COUNT(TrueFalse)
+FROM table1
+GROUP BY TrueFalse;
+
+-- Select disticnt values and order column
+SELECT DISTINCT * FROM table1
+ORDER BY column1 ASC, column2 ASC;
+
+-- Example of a JOIN. Can be OUTER JOIN, CROSS JOIN
+SELECT * FROM table1
+JOIN table2 ON table1.column1=table2.column1;
+
+-- Manipulating time
+WITH custom_time_table AS
+(SELECT CAST(Timestamp as timestamp) as date FROM timetable1)
+SELECT 
+  date_format(Date, 'yyyy-MM-dd hh:mm:ss') AS Date,
+  year(Date) AS Year, 
+  month(Date) AS Month
+FROM custom_time_table
+WHERE month(date)=12;

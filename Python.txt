@@ -42,6 +42,7 @@ df['column1'].plot.kde()
 df.plot.area()
 
 # MATPLOTLIB
+import matplotlib.pyplot as plt
 # example 1 - chart within a chart
 fig=plt.figure()
 

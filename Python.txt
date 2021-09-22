@@ -35,6 +35,9 @@ df.loc[df['Column1']=='abc'].count()
 df.loc[df['Column1']=='abc'].value_counts()
 df.loc[(df['Column1']=='abc)&(df['Column2']==123)]
 sum(df['Email'].apply(lambda x: x.split('@')[1]).value_counts() #example to find popular email providers in Email column
+pd.concat([df1, df2], axis=1) #outer join
+df1.join(df2) #left join
+pd.merge(df1, df2, left_index=True, right_index=True) #inner join
 
 # pandas plotting
 df.plot.scatter(x='column1',y='column2',c='red',s=50,figsize=(12,3)) 

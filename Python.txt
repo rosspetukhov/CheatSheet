@@ -38,6 +38,8 @@ sum(df['Email'].apply(lambda x: x.split('@')[1]).value_counts() #example to find
 pd.concat([df1, df2], axis=1) #outer join
 df1.join(df2) #left join
 pd.merge(df1, df2, left_index=True, right_index=True) #inner join
+df.loc[df['Column1']=='A','Score']=1
+df['Column1'] = df.idxmax(axis=1) #find column with max value
 
 # pandas plotting
 df.plot.scatter(x='column1',y='column2',c='red',s=50,figsize=(12,3)) 
